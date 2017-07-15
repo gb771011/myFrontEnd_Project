@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>016</title>
+</head>
+
+<body>
+    <!--
+    <div id="timeset">
+        <input type="number" id="dis_hour" value="1" min="0" max="99"></input>
+        <p>:</p>
+        <input type="number" id="dis_min" value="22" min="0" max="59"></input>
+        <p>:</p>
+        <input type="number" id="dis_sec" value="33" min="0" max="59"></input>
+    </div>
+    -->
+    <h1>Web Counter</h1>
+    <article class="container">
+        <section id="0">
+            <div id="display">
+                <input type="number" class="dis_hh" value="10" min="0" max="99"></input>
+                <span>:</span>
+                <input type="number" class="dis_mm" value="10" min="0" max="59"></input>
+                <span>:</span>
+                <input type="number" class="dis_ss" value="3" min="0" max="59"></input>
+            </div>
+            <div id="btns">
+                <button class="btn_set" type="button">設定</button>
+                <button type="button">開始</button>
+                <button type="button">暫停</button>
+                <button type="button">取消</button>
+            </div>
+        </section>
+    </article>
+
+    <div id="console"> </div>
+    <script src="main.js"></script>
+    <script>
+        function Timer() {
+            var status, target;
+            // this.id = id;
+            this.set = function (hh, mm, ss) {
+                this.target = hh * 3600 + mm * 60 + ss;
+                // return this.target;
+            };
+            this.start = 0;
+            this.stop = 0;
+            this.pause = 0;
+        }
+        var t = new Timer();
+        $(".btn_set").click(function () {
+            // t.set(1, 0, 4);
+            console.dir(this.parentNode.parentNode.id);
+        }
+        );
+        var i=0;
+        while (i<10) {
+            console.log(i);
+            i++;
+        }
+    </script>
+</body>
+
+</html>

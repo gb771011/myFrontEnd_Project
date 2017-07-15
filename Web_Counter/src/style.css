@@ -1,0 +1,61 @@
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            width: 90%;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        
+        input {
+            border-width: 0;
+            /*padding: 0;*/
+            width: 8rem;
+            text-align: center;
+            background-color: inherit;
+            font-size: 3.7rem;
+        }
+        
+        input[readonly] {
+            color: red;
+        }
+        
+        p {
+            font-size: 2rem;
+        }
+        
+        #display, #btns, #timeset {
+            width: 100%;
+            display: inline-flex;
+            justify-content: space-around;
+            /*justify-content: center;*/
+            align-items: center;
+            height: 80px;
+        }
+        
+        #display {
+            background-color: yellow;
+        }
+        
+        #timeset {
+            background-color: lightcoral;
+        }
+        
+        #btns {
+            background-color: green;
+        }
+        
+        #btns button {
+            height: 90%;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        #btns button:first-of-type {
+            flex: 3
+        }
+        
+        #btns button:not(:first-of-type) {
+            flex: 1
+        }

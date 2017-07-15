@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>009-todoList v1</title>
+</head>
+
+<body>
+    <h1>hello 009-simple text reader</h1>
+    <input id="fileInput" type="file" onchange="readText()">
+    <div id="result">
+        <b>Type: </b><span id="reType"></span><br>
+        <b>Content:</b>
+        <p id="reCont"></p>
+    </div>
+    <script>
+        function readText() {
+            var file = $("#fileInput").prop("files")[0],
+                reader = new FileReader(),
+                cont;
+
+            reader.readAsText(file, 'big5');
+            console.dir(reader);
+
+            reader.onloadstart = function (e) {
+                console.log("Start");
+                $("#reType").html("Loading...")
+                $("#reCont").html("Loading...");
+            }
+
+            reader.onload = function () {
+                cont = this.result.replace(/\n/g, "<br>");
+                $("#reType").html(file.type);
+                // $("#reCont").html(this.result.replace(/\n/g,"<br>"));
+                $("#reCont").html(cont);
+            };
+            cont = reader.result;
+            console.log(cont.length);
+        }
+    </script>
+</body>
+
+</html>
