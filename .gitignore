@@ -2,3 +2,4 @@
 *.url
 \.vscode\chrome
 \node_modules
+**\test
