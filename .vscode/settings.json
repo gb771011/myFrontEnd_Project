@@ -1,16 +1,13 @@
 // 將您的設定放入此檔案中以覆寫預設值和使用者設定。
-{ // 設定檔案總管理是否隱藏下列檔案/資料夾
+{
+    // 不顯示下列資料夾 or 檔案
     "files.exclude": {
-        "**/.git": false,
+        "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
+        "**/CVS": true,
         "**/.DS_Store": true,
-        "**/*.gitignore": true,
-        "**/chrome": true,
-        "**/*.bat": true
-    },
-    "vs-color-picker:autoLaunch": false,
-    "files.associations": {
-        "*.ejs": "javascript"
+        "**/node_modules":false
+        // ,"**/test_folder":true
     }
 }

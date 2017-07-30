@@ -1,47 +1,33 @@
 {
-    // 說明見:https://code.visualstudio.com/docs/editor/tasks
-    "version": "0.1.0",
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
     "tasks": [
         {
             "taskName": "echo",
-            "command": "live-server",
+            "command": "echo",
             "args": [
-                // "${fileDirname}"
-                "--open=${relativeFile}"
+                "${fileDirname}"
             ],
-            "isShellCommand": true
+            "type": "shell",
+            "problemMatcher": [
+                "$go"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         },
         {
-            "taskName": "Launch via chrome",
-            "command": "chrome",
-            "windows": {
-                "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
-                "args": [
-                    "--new-window",
-                    "--disable-extensions", // 禁用擴充功能
-                    "--disk-cache-size 0", // 將快取設為0
-                    "--disable-translate " // 禁用翻譯功能
-                ]
-            },
+            "taskName": "echo2",
+            "command": "echo",
             "args": [
-                "${file}"
+                "${fileDirname}"
+            ],
+            "type": "shell",
+            "problemMatcher": [
+                "$go"
             ]
         }
     ]
 }
-/*            "taskName": "echo hello", // 顯示在命令選擇區裡的名稱
-            "command": "echo", // 要執行的命令
-            "isShellCommand": true, //是否為殼層命令(透過cmd執行)
-            "args": [ //要接在"command"後面的參數
-                "Hello World"
-            ],
-            "echoCommand": true, // 是否將命令傳到下方輸出視窗內
-            "suppressTaskName": true // 是否省略命令裡的"taskName"引數，預設為false
-        
-        */
-/*
-            "suppressTaskName"差異
-            (_為空白)
-            若值為"true" 則命令會變成 "command"_"args"(global)_"args"(task)
-            若值為"false" ， 則命令會變成 "command"_"args"(global)_"taskName"_args"(task)，會多一個"taskName"在命令裡
-            */
