@@ -1,0 +1,22 @@
+{
+  "name": "my_web_project",
+  "version": "1.0.0",
+  "description": "modules for this folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo test_success"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gb771011/myWeb_Project.git"
+  },
+  "author": "Gaty Chiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gb771011/myWeb_Project/issues"
+  },
+  "homepage": "https://github.com/gb771011/myWeb_Project#readme",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
