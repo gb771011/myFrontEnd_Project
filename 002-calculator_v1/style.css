@@ -1,0 +1,67 @@
+/*CSS3變數設定區:所有CSS的變數都必須在:root裡設定*/
+:root{
+    /*語法:--[變數名稱]:[變數值]*/
+    --btn_h:80px;
+}
+body{
+    width:calc(var(--btn_h) * 4 + 25px);
+    /*簡易內容置中*/
+    margin: 0 auto;
+    background-color:lightgray;
+    border: 10px solid grey;
+}
+h1{
+    text-align: center;
+}
+.row{
+    /*border: 1px solid red;*/
+    height: calc(var(--btn_h) + 5px);
+    
+}
+.btn{
+    /*固定元素尺寸，讓margin跟padding不會影響到元素的總尺寸(內容尺寸內縮)*/
+    box-sizing: border-box;
+    /*border: 1px solid darkblue;*/
+    /*background-color: lightblue;*/
+    margin-left: 5px;
+    float: left;
+    width:var(--btn_h);
+    height: var(--btn_h);   
+    line-height: var(--btn_h);
+    /*文字置中method1:-line-height=height*/
+    text-align: center;
+    font-size: 2.5em;
+    /*font-weight: bold;*/
+    /*CSS:防止網頁內文字被選取，需加前墜詞*/
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+}
+.btn_R{
+    margin-right: 5px
+}
+.btn:hover{
+    box-shadow:2px 2px gray;
+    }
+.btn:active{
+    box-shadow:none;
+     position: relative;
+     /*background-color: blue;*/
+     top: 2px;
+     left: 2px;
+}
+#ans{
+    border: 2px solid black;
+    margin: 5px;
+    padding:0 5px;
+    height: 75px;
+    line-height: 75px;    
+    text-align: right;
+    font-size: 4em;
+    overflow: hidden;
+}
+footer{
+    text-align: center;
+}

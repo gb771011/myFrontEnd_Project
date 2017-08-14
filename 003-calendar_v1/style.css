@@ -1,0 +1,57 @@
+/*
+    1.
+    大小單位: % 與 vw/vh(css3):
+    兩者都是相對的長度單位，差異在兩者的基準為何:
+
+    % : 相對於父元素
+        若父元素寬度為400px，視窗寬度為1600px，此時在子元素設置width:50%時其顯示寬度為相對於父元素(400px)的50% = 200px
+
+    vw/vh : 相對於視窗寬度大小
+        若父元素寬度為400px，視窗寬度為1600px，此時在子元素設置width:50%時其顯示寬度為相對於視窗寬度(1600px)的50% = 800px
+
+    2.字體單位:em 與 rem(css3)
+    兩者都是相對的字體單位，差異在兩者的基準為何:
+    em : 相對於父元素的字體大小
+        若父元素字體大小為16px，頁面預設字體大小為12px，此時子元素設置font-size:1.5em時其字體大小為相對於父元素(16px)的1.5倍 = 24px
+
+    rem : 相對於視窗/瀏覽器的預設字體大小
+        若父元素字體大小為16px，頁面預設字體大小為12px，此時子元素設置font-size:1.5rem時其字體大小為相對於預設字體大小(12px)的1.5倍 = 18px
+*/
+*{
+    box-sizing: border-box;
+}
+body{
+    /*1.*/
+    width:100%;
+    margin: 0 auto;
+    background-color: #c2e8ac;
+    border: 1px solid #68be34;
+}
+
+#myCalendar{
+    max-width: 400px;
+    min-width: 240px;
+    margin: 0 auto;
+}
+table, tr, th, td {
+    border-collapse: collapse;
+    text-align:center
+}
+caption{
+    font-size:2em;
+    padding: 10px 0;
+}
+table{
+    width:95%;
+    /*=0.95 * section.width*/
+    margin:0 auto;
+    border: 1px solid black;
+}
+th, td{
+    width: calc(100% / 7);
+    /*= calc( [100% * table.width] / 7 )*/
+    border: 1px solid black;
+    height: 1.5rem;
+    font-size: 1rem
+}
+
